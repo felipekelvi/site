@@ -1,65 +1,165 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <header>
-        <div>
-            <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-                <div class="container-fluid">
-                  <a class="navbar-brand" href="#">
-                    <img src="data:image/png;base64,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" alt="Avatar Logo" style="width:40px;" class="rounded-pill"> 
-                  </a>
-                </div>
-              </nav>
-                <nav>
-                    <ul>
-                        <li>São Paulo</li>
-                        <li>sobre</li>
-                        <li>contato</li>
-                </nav>
-            </div>
-        </div>
-    </header>
-    <main>
-<!-- Carousel -->
-<div id="demo" class="carousel slide" data-bs-ride="carousel">
+<!doctype html>
+<html lang="pt">
 
-    <!-- Indicators/dots -->
-    <div class="carousel-indicators">
-      <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
-      <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
-      <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
-    </div>
-  
-    <!-- The slideshow/carousel -->
-    <div class="carousel-inner">
-      <div class="carousel-item active">
-        <img src="la.jpg" alt="Los Angeles" class="d-block w-100">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <title>meu site</title>
+  </head>
+
+  <body>
+    <nav class="navbar col-12 position-fixed navbar-expand-lg navbar-dark bg-dark" style="z-index: 999;">
+        <div class="container-fluid col-11 m-auto">
+          <a class="navbar-brand" href="#">SPFC</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Link</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Dropdown
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" href="#">Action</a></li>
+                  <li><a class="dropdown-item" href="#">Another action</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="#">Something else here</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+              </li>
+            </ul>
+            <form class="d-flex">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+          </div>
+        </div>
+      </nav>
+      <br><br><br>
+      <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="/img/00de8e8c44a0429fdfde8fba37efe887.jpg" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="/img/download.jpg" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="/img/ytrhfg.jpg" class="d-block w-100" alt="...">
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
       </div>
-      <div class="carousel-item">
-        <img src="chicago.jpg" alt="Chicago" class="d-block w-100">
-      </div>
-      <div class="carousel-item">
-        <img src="ny.jpg" alt="New York" class="d-block w-100">
-      </div>
-    </div>
-  
-    <!-- Left and right controls/icons -->
-    <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon"></span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
-      <span class="carousel-control-next-icon"></span>
-    </button>
-  </div>
-    </main>
-    <footer>
+      <div class="row row-cols-1 row-cols-md-2 g-4 col-11 m-auto">
+        <div class="col">
+          <div class="card">
+            <img src="/img/00de8e8c44a0429fdfde8fba37efe887543543543.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card">
+            <img src="/img/7a9d8fbd376083c3d8a2e075f09c30c5_tn.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card">
+            <img src="/img/93-930431_sao-paulo-fc-wallpapers.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content.</p>
+            </div>
+          </div>
+        </div>
         
-    </footer>
-</body>
+      </div>
+      <hr>
+      <div class="col-11 m-auto">
+        <h2 class="text-center">São Paulo fc</h2>
+        <p class="">O São Paulo FC é dentre os grandes não apenas o primeiro, como diz o hino são-paulino, mas também o mais jovem. A grande saga do Tricolor começou, porém, quando o futebol ainda engatinhava no Brasil, com a fundação do clube mais vitorioso da era amadora do esporte: o Club Athlético Paulistano.</p>
+      </div>
+      <hr>
+      <div class="col-11 m-auto">
+        <h2 class="text-center">contatos</h2>
+        <i class="fa-brands fa-whatsapp" style="font-size: 150px;"></i>
+      </div>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+       
+
+
+
+  
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+  </body>
+
 </html>
